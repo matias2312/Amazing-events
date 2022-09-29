@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Details</title>
+</head>
+
+<body>
+  <div id="app">
+   <header class="bg-danger bg-opacity-10">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ms-4">
+          <a class="navbar-brand" href="./index.html" target="_blank"><img src="./assets/logoamazingevents.png" id="logo" alt="l" width="200"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav  justify-content-end gap-3" >
+              <li class="nav-item btn btn-secondary">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item btn btn-secondary">
+                <a class="nav-link" href="./upcomingevents.html">Upcoming Events</a>
+              </li>
+              <li class="nav-item btn btn-secondary">
+                <a class="nav-link" href="./pastevents.html">Past Events</a>
+              </li>
+              <li class="nav-item btn btn-secondary">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item btn btn-secondary">
+                <a class="nav-link" href="#">Details</a>
+              </li>
+              <li class="nav-item btn btn-outline-secondary">
+                <a class="nav-link" href="./stats.html">Stats</a>
+              </li>
+            </ul>   
+          </div>
+        </div>
+      </nav>
+    <nav class="navbar bg-danger bg-opacity-10 shadow">
+        <div class="container-fluid">
+            <a class="page-link" href="./contact.html" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+                </svg>
+            </a>
+           <span class="navbar-text display-2">
+            Details
+           </span>
+            <div>
+                <a class="page-link" href="./stats.html" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+   </header>
+   <main>
+    <div class="row w-10 shadow p-1 mb-1" >
+      <div class="col d-flex align-items-center ms-3">
+          <div class="d-flex flex-column gap-3">
+              <h3 class="h1">{{eventoid.name}}</h3>
+              <ul class="list-group-item">
+              <li class="list-group-item col-8">{{eventoid.description}}</li>
+              <li class="list-group-item">Category: {{eventoid.category}}</li>
+              <li class="list-group-item">Date: {{eventoid.date}}</li>
+              <li class="list-group-item">Place: {{eventoid.place}}</li>
+              <li class="list-group-item" >Capacity: {{eventoid.capacity}}</li>
+              <li class="list-group-item">Assistance or estimate: {{eventoid.assistance? eventoid.assistance : eventoid.estimate}}</li>
+              </ul>
+              <div class="col d-flex gap-4">
+                  <button type="button" class="btn btn-success">Price: ${{eventoid.price}}</button>
+              </div>
+          </div>
+      </div>
+      <div class="col-md">
+          <img :src="eventoid.image" class="img-fluid-lg order-4 shadow p-1 mb-1 bg-body rounded w-100 h-100" alt="sonrisa" >
+      </div>
+  </div>
+        
+    </main>
+    <footer class="row">
+      <div class="col d-flex gap-sm-5">
+          <i class="bi bi-whatsapp "></i>
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+      </div>
+      <div class=" col d-flex justify-content-end">
+          <img src="./assets/cohort.jpg" alt="cohort" width="60" height="50">
+      </div>
+  </footer>
+</div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+   crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+   <script src="./js/index.js"></script>
+</body>
+
+</html>
